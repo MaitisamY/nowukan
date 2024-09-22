@@ -27,18 +27,28 @@
             padding: 0;
             overflow-x: hidden;
             box-sizing: border-box;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
         .nav {
-            width: 20%;
+            width: fit-content;
             height: auto;
-            position: fixed;
+            position: sticky;
             top: 10px;
-            right: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
+            z-index: 99999;
+            border-radius: 25px;
+            padding: 5px 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
         .nav ul {
             display: flex;
@@ -48,8 +58,8 @@
             justify-content: center;
             align-items: center;
             padding: 5px 10px;
-            color: #999;
-            text-decoreation: none;
+            color: #333;
+            text-decoration: none;
             cursor: pointer;
             transition: all 0.3s ease;
         }
