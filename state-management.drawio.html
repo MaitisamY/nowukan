@@ -1,12 +1,86 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=5,IE=9" ><![endif]-->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>state-management.html</title>
-<meta charset="utf-8"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=5,IE=9" >
+    <title>Overall App Structure</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Outfit", system-ui;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: transparent;
+            color: #1b1b1b;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .nav {
+            width: fit-content;
+            height: auto;
+            position: sticky;
+            top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #DAE8FC;
+            backdrop-filter: blur(10px);
+            z-index: 99999;
+            border-radius: 25px;
+            padding: 5px 10px;
+            margin: 10px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .nav ul {
+            display: flex;
+        }
+        .nav ul a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px 10px;
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .nav ul a:hover,
+        .nav ul a.active {
+            color: #000;
+        }
+    </style>
 </head>
-<body>
-<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36\&quot; version=\&quot;24.7.14\&quot;&gt;&lt;diagram name=\&quot;Page-1\&quot; id=\&quot;N6SO2E6GhYhAIGw-mue3\&quot;&gt;&lt;mxGraphModel dx=\&quot;1434\&quot; dy=\&quot;2010\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;&lt;root&gt;&lt;mxCell id=\&quot;0\&quot;/&gt;&lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot;/&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-3\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#003366;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;sghL8xdsNyyvsxRy_o8R-1\&quot; target=\&quot;sghL8xdsNyyvsxRy_o8R-2\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-1\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;Bloc state management using&amp;amp;nbsp;&amp;lt;/font&amp;gt;&amp;lt;span style=&amp;quot;font-size: 17px; background-color: initial;&amp;quot;&amp;gt;flutter-bloc&amp;lt;/span&amp;gt;&amp;lt;div style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;(Set the flutter-bloc at the root level of the application, mainly at the entry point)&amp;lt;/div&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#003366;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;314\&quot; y=\&quot;920\&quot; width=\&quot;200\&quot; height=\&quot;200\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-5\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#003366;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;sghL8xdsNyyvsxRy_o8R-2\&quot; target=\&quot;sghL8xdsNyyvsxRy_o8R-4\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-2\&quot; value=\&quot;&amp;lt;span style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;Topic id&amp;lt;/span&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#003366;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;314\&quot; y=\&quot;640\&quot; width=\&quot;200\&quot; height=\&quot;200\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-7\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#003366;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;sghL8xdsNyyvsxRy_o8R-4\&quot; target=\&quot;sghL8xdsNyyvsxRy_o8R-6\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-4\&quot; value=\&quot;&amp;lt;span style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;Subject id&amp;lt;/span&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#003366;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;314\&quot; y=\&quot;360\&quot; width=\&quot;200\&quot; height=\&quot;200\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-10\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;strokeColor=#003366;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;sghL8xdsNyyvsxRy_o8R-6\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;&lt;mxPoint x=\&quot;314\&quot; y=\&quot;-40\&quot; as=\&quot;targetPoint\&quot;/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-11\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;strokeColor=#003366;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;sghL8xdsNyyvsxRy_o8R-6\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;&lt;mxPoint x=\&quot;514\&quot; y=\&quot;-40\&quot; as=\&quot;targetPoint\&quot;/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-6\&quot; value=\&quot;&amp;lt;span style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;Skill level&amp;lt;/span&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#003366;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;314\&quot; y=\&quot;80\&quot; width=\&quot;200\&quot; height=\&quot;200\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-12\&quot; value=\&quot;&amp;lt;span style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;Word pack&amp;lt;/span&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#003366;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;200\&quot; y=\&quot;-240\&quot; width=\&quot;200\&quot; height=\&quot;200\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-13\&quot; value=\&quot;&amp;lt;span style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;Exercise&amp;lt;/span&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#003366;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;440\&quot; y=\&quot;-240\&quot; width=\&quot;200\&quot; height=\&quot;200\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;&lt;/diagram&gt;&lt;/mxfile&gt;&quot;,&quot;toolbar&quot;:&quot;pages zoom layers lightbox&quot;,&quot;page&quot;:0}"></div>
-<script type="text/javascript" src="https://app.diagrams.net/js/viewer-static.min.js"></script>
+<body>  
+    <div class="nav">
+        <ul>
+            <a href="https://maitisamy.github.io/nowukan/" target="_blank">Home</a>
+            <a href="https://maitisamy.github.io/nowukan/outer-app-flow.drawio.html" target="_blank">Outer App Flow</a>
+            <a href="https://maitisamy.github.io/nowukan/inner-app-flow.drawio.html" target="_blank">Inner App Flow</a>
+            <a href="https://maitisamy.github.io/nowukan/csv-management.drawio.html" target="_blank">CSV Management</a>
+            <a class="active" href="https://maitisamy.github.io/nowukan/state-management.drawio.html" target="_blank">State Management</a>
+        </ul>
+    </div>
+    <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36\&quot; version=\&quot;24.7.14\&quot;&gt;&lt;diagram name=\&quot;Page-1\&quot; id=\&quot;N6SO2E6GhYhAIGw-mue3\&quot;&gt;&lt;mxGraphModel dx=\&quot;1434\&quot; dy=\&quot;2010\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;&lt;root&gt;&lt;mxCell id=\&quot;0\&quot;/&gt;&lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot;/&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-3\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#003366;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;sghL8xdsNyyvsxRy_o8R-1\&quot; target=\&quot;sghL8xdsNyyvsxRy_o8R-2\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-1\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;Bloc state management using&amp;amp;nbsp;&amp;lt;/font&amp;gt;&amp;lt;span style=&amp;quot;font-size: 17px; background-color: initial;&amp;quot;&amp;gt;flutter-bloc&amp;lt;/span&amp;gt;&amp;lt;div style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;(Set the flutter-bloc at the root level of the application, mainly at the entry point)&amp;lt;/div&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#003366;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;314\&quot; y=\&quot;920\&quot; width=\&quot;200\&quot; height=\&quot;200\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-5\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#003366;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;sghL8xdsNyyvsxRy_o8R-2\&quot; target=\&quot;sghL8xdsNyyvsxRy_o8R-4\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-2\&quot; value=\&quot;&amp;lt;span style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;Topic id&amp;lt;/span&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#003366;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;314\&quot; y=\&quot;640\&quot; width=\&quot;200\&quot; height=\&quot;200\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-7\&quot; value=\&quot;\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#003366;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;sghL8xdsNyyvsxRy_o8R-4\&quot; target=\&quot;sghL8xdsNyyvsxRy_o8R-6\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-4\&quot; value=\&quot;&amp;lt;span style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;Subject id&amp;lt;/span&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#003366;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;314\&quot; y=\&quot;360\&quot; width=\&quot;200\&quot; height=\&quot;200\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-10\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;strokeColor=#003366;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;sghL8xdsNyyvsxRy_o8R-6\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;&lt;mxPoint x=\&quot;314\&quot; y=\&quot;-40\&quot; as=\&quot;targetPoint\&quot;/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-11\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;strokeColor=#003366;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;sghL8xdsNyyvsxRy_o8R-6\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;&lt;mxPoint x=\&quot;514\&quot; y=\&quot;-40\&quot; as=\&quot;targetPoint\&quot;/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-6\&quot; value=\&quot;&amp;lt;span style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;Skill level&amp;lt;/span&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#003366;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;314\&quot; y=\&quot;80\&quot; width=\&quot;200\&quot; height=\&quot;200\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-12\&quot; value=\&quot;&amp;lt;span style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;Word pack&amp;lt;/span&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#003366;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;200\&quot; y=\&quot;-240\&quot; width=\&quot;200\&quot; height=\&quot;200\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;sghL8xdsNyyvsxRy_o8R-13\&quot; value=\&quot;&amp;lt;span style=&amp;quot;font-size: 17px;&amp;quot;&amp;gt;Exercise&amp;lt;/span&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#003366;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;440\&quot; y=\&quot;-240\&quot; width=\&quot;200\&quot; height=\&quot;200\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;&lt;/diagram&gt;&lt;/mxfile&gt;&quot;,&quot;toolbar&quot;:&quot;pages zoom layers lightbox&quot;,&quot;page&quot;:0}"></div>
+    <script type="text/javascript" src="https://app.diagrams.net/js/viewer-static.min.js"></script>
 </body>
 </html>
